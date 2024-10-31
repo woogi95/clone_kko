@@ -12,8 +12,13 @@
   border-radius: 20px;
   overflow: hidden;
   transition: all 0.5s;
+  margin-bottom: 30px;
 }
-/nardw .card-img {
+.card-wrap:hover {
+  transform: translateY(-10px);
+  filter: drop-shadow(0px 20px 40px #bdc4d3);
+}
+.card-img {
   width: 100%;
   height: 100%;
 }
@@ -27,14 +32,23 @@
   left: 0;
   bottom: 0;
   z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 25px 20px;
   width: 100%;
   height: 70px;
-  background-color: #000000;
-  filter: drop-shadow(0px 20px 40px #bdc4d3);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 .card-cate {
-  color: #fff;
+  color: #f5f7fa;
+  font-size: 18px;
+  font-weight: 700;
 }
 .card-count {
-  color: #fff;
+  color: #ffffff;
+  font-size: 10px;
+  padding: 5px 10px;
+  background-color: #1e1e1e;
+  border-radius: 10px;
 }
