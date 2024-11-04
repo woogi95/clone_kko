@@ -52,3 +52,9 @@
   background-color: #1e1e1e;
   border-radius: 10px;
 }
+
+@media screen and (max-width: 1024px) {
+  .main-content .right {
+    display: none;
+  }
+}
