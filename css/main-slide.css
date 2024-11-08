@@ -27,9 +27,23 @@
   object-fit: cover;
 }
 
+.visual-slide .swiper-pagination .swiper-pagination-bullet {
+  background-color: #fff;
+  width: 4px;
+  height: 4px;
+  border-radius: 4px;
+  transition: all 0.5s;
+  opacity: 0.6;
+}
+
+.visual-slide .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: #fff;
+  width: 20px;
+}
+
 .main-slide .right {
   /* 370 나누기 1180 곱하기 100 = 31.35 */
-  width: 31.355%;
+  width: 31.355vw;
   max-width: 370px;
   /* 470 나누기 1180 곱하기 100 = 39.83 */
   height: 39.83vw;
@@ -57,12 +71,14 @@
 .mb-card-slide {
   margin-top: 60px;
   display: none;
+  overflow: hidden;
 }
 /* js 로 변경 예쩡 */
 .mb-card-slide-wrap {
   display: flex;
   justify-content: space-between;
   gap: 15px;
+  width: 1160px;
 }
 /* 가로 너비 대비 세로가 평상시에도 변한다. */
 /* 상단 영역 */
@@ -79,7 +95,7 @@
     max-height: 980px;
   }
 
-  .main-content .right {
+  .main-slide .right {
     display: none;
   }
 
