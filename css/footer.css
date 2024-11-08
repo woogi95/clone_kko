@@ -1,6 +1,120 @@
 /* 하단영역 */
 .footer {
   width: 100%;
-  height: 265px;
   background-color: #1e1e1e;
+}
+
+.footer-main {
+  width: 100%;
+  padding: 40px 0px;
+}
+.footer-main .layout {
+  max-width: 1170px;
+  margin: 0 auto;
+  display: flex;
+  margin: 89px;
+
+  justify-content: space-between;
+}
+.footer-main .layout .left {
+}
+.footer-logo-link {
+}
+.footer-logo-link img {
+  margin-bottom: 30px;
+  width: 121px;
+  height: 20px;
+}
+.footer-main-bt {
+  background-color: #ffc600;
+  color: #1e1e1e;
+  padding: 10px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 700;
+  text-decoration: none;
+}
+.footer-main-info {
+  color: #999;
+  margin-bottom: 40px;
+}
+.footer-main .layout .right {
+  display: flex;
+  gap: 85px;
+}
+.site-map-list {
+  list-style: none;
+}
+
+.site-map-list li {
+  margin-bottom: 25px;
+}
+.site-map-list li:first-child {
+  margin-bottom: 35px;
+}
+.site-map-list li:last-child {
+  margin-bottom: 0;
+}
+.site-map-list li b {
+  color: #fff;
+  font-weight: 700;
+  font-size: 16px;
+}
+.site-map-list li a {
+  color: #999;
+  text-decoration: none;
+}
+
+.footer-copy {
+  width: 100%;
+  height: 100px;
+}
+.footer-copy .layout {
+  display: flex;
+  margin: 0 auto;
+  max-width: 1170px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-copy .layout .left {
+}
+.copy {
+  color: #666666;
+}
+
+.footer-copy .layout .right {
+}
+.sns {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.insta {
+  color: #666666;
+  font-size: 24px;
+}
+.youtube {
+  color: #666666;
+  font-size: 24px;
+}
+.github {
+  color: #666666;
+  font-size: 24px;
+}
+.facebook {
+  color: #666666;
+  font-size: 24px;
+}
+
+@media screen and (max-width: 1024px) {
+  .footer-main .layout {
+    display: block;
+  }
+  .footer-main .layout .right {
+    margin-top: 40px;
+  }
+  .site-map-list {
+    width: 50%;
+  }
 }
