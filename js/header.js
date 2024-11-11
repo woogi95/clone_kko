@@ -8,11 +8,11 @@ window.addEventListener("load", function () {
     */
   // header 를 보관함에 담아둔다.
   const header = document.querySelector(".header");
-  console.log(header);
+  // console.log(header);
   // 스크롤 체크하기
   window.addEventListener("scroll", function () {
     const scrollPositionY = window.scrollY;
-    console.log(scrollPositionY);
+    // console.log(scrollPositionY);
     // header 에 class 추가하기
     if (scrollPositionY > 0) {
       header.classList.add("header-active");

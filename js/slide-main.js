@@ -1,4 +1,30 @@
 window.addEventListener("load", function () {
+  const VISUAL_DATA_URL = "/apis/main.json";
+  fetch(VISUAL_DATA_URL)
+    .then(function (response) {
+      const result = response.json();
+      return result;
+    })
+    .then(function (result) {
+      let htmlVisual = "";
+      for (let i = 0; i < 4; i++) {
+        const obj = result[i];
+        const tag = `
+     <div class="swiper-slide">
+                  <a href="${obj.url}">
+                    <img src="./images/${obj.pic}" alt="배너이미지" />
+                  </a>
+                  <div class="slide-title">
+                  ${obj.title}
+                  </div>
+                </div>   
+     `;
+        htmlVisual += tag;
+      }
+      const visualTag = document.querySelector("#visual-api");
+      visualTag.innerHTML = htmlVisual;
+    })
+    .catch(function () {});
   const visualSlideSW = new Swiper(".visual-slide", {
     loop: true,
     pagination: {

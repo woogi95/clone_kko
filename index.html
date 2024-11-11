@@ -35,6 +35,10 @@
     <link rel="stylesheet" href="./css/footer.css" />
     <script src="./js/header.js"></script>
     <script src="./js/main.js"></script>
+    <script src="./js/news.js"></script>
+    <script src="./js/cards.js"></script>
+    <script src="./js/main-list.js"></script>
+
     <script src="./js/footer.js"></script>
     <script src="./js/slide-main.js"></script>
     <script src="./js/slide-card.js"></script>
@@ -57,7 +61,8 @@
           <div class="swiper header-logo-motion">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
-                <img src="./images/etc/logo-blog01.png" alt="" />
+                <!-- json 데이터를 출력한다. -->
+                <!-- <img src="./images/etc/logo-blog01.png" alt="" />
               </div>
               <div class="swiper-slide">
                 <img src="./images/etc/logo-blog02.png" alt="" />
@@ -81,7 +86,7 @@
                 <img src="./images/etc/logo-blog08.png" alt="" />
               </div>
               <div class="swiper-slide">
-                <img src="./images/etc/logo-blog09.png" alt="" />
+                <img src="./images/etc/logo-blog09.png" alt="" /> -->
               </div>
             </div>
           </div>
@@ -119,8 +124,8 @@
           <div class="left">
             <!-- 교체 가능 -->
             <div class="swiper visual-slide">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
+              <div class="swiper-wrapper" id="visual-api">
+                <!-- <div class="swiper-slide">
                   <a href="#">
                     <img src="./images/b1.png" alt="배너이미지" />
                   </a>
@@ -139,7 +144,7 @@
                   <a href="#">
                     <img src="./images/b1.png" alt="배너이미지" />
                   </a>
-                </div>
+                </div> -->
               </div>
               <div class="swiper-pagination"></div>
             </div>
@@ -150,8 +155,9 @@
             <!-- 교체 가능 -->
             <div class="card-slide">
               <a href="#">
-                <img src="./images/c3.png" alt="배너이미지" />
+                <img src="./images/br.png" alt="배너이미지" />
               </a>
+              <div class="slide-title-sub">영입중</div>
             </div>
           </div>
         </div>
@@ -165,8 +171,8 @@
               <h4 class="list-title">NEW. 따끈따끈 새로 나온 글 🔥</h4>
               <div class="list-thum-wrap">
                 <!--@Start 게시글 목록 -->
-                <div class="list">
-                  <a href="#" class="thum">
+                <div class="list" id="news-api">
+                  <!-- <a href="#" class="thum">
                     <div class="thum-img">
                       <img src="./images/c1.jpg" alt="뉴스" />
                     </div>
@@ -207,7 +213,7 @@
                       공개
                     </h5>
                     <span class="thum-date">2024.10.29</span>
-                  </a>
+                  </a> -->
                 </div>
                 <!--@End  -->
               </div>
@@ -221,10 +227,10 @@
             <!-- 카테고리 목록 -->
             <div class="list-cate-wrap">
               <h4 class="list-title">NEW. 따끈따끈 새로 나온 글 🔥</h4>
-              <div class="list-thum-wrap">
+              <div class="list-thum-wrap" id="list-post">
                 <!--@Start 게시글 목록 -->
-                <div class="list">
-                  <a href="#" class="thum">
+                <!-- <div class="list" id="post-top"> -->
+                <!-- <a href="#" class="thum">
                     <div class="thum-img">
                       <img src="./images/c1.jpg" alt="뉴스" />
                     </div>
@@ -265,12 +271,12 @@
                       공개
                     </h5>
                     <span class="thum-date">2024.10.29</span>
-                  </a>
-                </div>
+                  </a> -->
+                <!-- </div> -->
                 <!--@End  -->
                 <!--@Start 게시글 목록 -->
-                <div class="list">
-                  <a href="#" class="thum">
+                <!-- <div class="list" id="post-bottom"> -->
+                <!-- <a href="#" class="thum">
                     <div class="thum-img">
                       <img src="./images/c1.jpg" alt="뉴스" />
                     </div>
@@ -311,8 +317,8 @@
                       공개
                     </h5>
                     <span class="thum-date">2024.10.29</span>
-                  </a>
-                </div>
+                  </a> -->
+                <!-- </div> -->
                 <!--@End  -->
               </div>
               <!-- 더보기 버튼 -->
@@ -325,9 +331,9 @@
           <div class="right">
             <h4 class="list-title">폴더 📁</h4>
             <!-- 카트 전체 목록 -->
-            <div class="list-card">
+            <div class="card">
               <!-- @start card -->
-              <a href="#" class="card-wrap">
+              <!-- <a href="#" class="card-wrap">
                 <div class="card-img">
                   <img src="./images/p1.png" alt="card" />
                 </div>
@@ -380,7 +386,7 @@
                   <h5 class="card-cate">LLMs</h5>
                   <span class="card-count">5</span>
                 </div>
-              </a>
+              </a> -->
               <!-- @end card -->
             </div>
             <div class="list-card-bt-wrap">
@@ -397,6 +403,36 @@
           <div class="swiper-wrapper">
             <div class="swiper-slide">
               <!-- @start card -->
+              <!-- <a href="#" class="card-wrap"> -->
+              <!-- <div class="card-img"> -->
+              <!-- <img src="./images/p1.png" alt="card" /> -->
+              <!-- </div> -->
+
+              <!-- <div class="card-info"> -->
+              <!-- <h5 class="card-cate">LLMs</h5> -->
+              <!-- <span class="card-count">5</span> -->
+              <!-- </div> -->
+              <!-- </a> -->
+
+              <!-- @End card -->
+              <!-- </div>
+            <div class="swiper-slide">
+              <!- @start card -->
+              <!-- <a href="#" class="card-wrap"> -->
+              <!-- <div class="card-img"> -->
+              <!-- <img src="./images/p1.png" alt="card" /> -->
+              <!-- </div> -->
+
+              <!-- <div class="card-info"> -->
+              <!-- <h5 class="card-cate">LLMs</h5> -->
+              <!-- <span class="card-count">5</span> -->
+              <!-- </div> -->
+              <!-- </a> -->
+
+              <!-- @End card -->
+              <!-- </div>
+            <div class="swiper-slide">
+              <!- @start card 
               <a href="#" class="card-wrap">
                 <div class="card-img">
                   <img src="./images/p1.png" alt="card" />
@@ -408,10 +444,10 @@
                 </div>
               </a>
 
-              <!-- @End card -->
+              <!- @End card 
             </div>
             <div class="swiper-slide">
-              <!-- @start card -->
+              <!- @start card 
               <a href="#" class="card-wrap">
                 <div class="card-img">
                   <img src="./images/p1.png" alt="card" />
@@ -423,10 +459,10 @@
                 </div>
               </a>
 
-              <!-- @End card -->
+              <!- @End card 
             </div>
             <div class="swiper-slide">
-              <!-- @start card -->
+              <!- @start card 
               <a href="#" class="card-wrap">
                 <div class="card-img">
                   <img src="./images/p1.png" alt="card" />
@@ -438,10 +474,10 @@
                 </div>
               </a>
 
-              <!-- @End card -->
+              <!- @End card 
             </div>
             <div class="swiper-slide">
-              <!-- @start card -->
+               @start card 
               <a href="#" class="card-wrap">
                 <div class="card-img">
                   <img src="./images/p1.png" alt="card" />
@@ -451,42 +487,13 @@
                   <h5 class="card-cate">LLMs</h5>
                   <span class="card-count">5</span>
                 </div>
-              </a>
-
-              <!-- @End card -->
+              </a> -->
             </div>
-            <div class="swiper-slide">
-              <!-- @start card -->
-              <a href="#" class="card-wrap">
-                <div class="card-img">
-                  <img src="./images/p1.png" alt="card" />
-                </div>
 
-                <div class="card-info">
-                  <h5 class="card-cate">LLMs</h5>
-                  <span class="card-count">5</span>
-                </div>
-              </a>
-
-              <!-- @End card -->
-            </div>
-            <div class="swiper-slide">
-              <!-- @start card -->
-              <a href="#" class="card-wrap">
-                <div class="card-img">
-                  <img src="./images/p1.png" alt="card" />
-                </div>
-
-                <div class="card-info">
-                  <h5 class="card-cate">LLMs</h5>
-                  <span class="card-count">5</span>
-                </div>
-              </a>
-
-              <!-- @End card -->
-            </div>
+            <!-- @End card -->
           </div>
         </div>
+        <!-- 전체보기 버튼 -->
         <div class="list-card-bt-wrap">
           <button id="bt-mb-more-card" class="bt">전체보기</button>
         </div>

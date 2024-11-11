@@ -20,30 +20,49 @@ window.addEventListener("load", function () {
     })
     .then(function (result) {
       // 1. json 뜯기
-      console.log(result);
+      // console.log(result);
       // 2. 반복해서 html 태그 를 생성
       let logoHtml = "";
       for (let i = 0; i < 9; i++) {
-        const data = `<div class="swiper-slide"><img src="${result[1].imgUrl}" alt="${result[i].desc}" /></div>`;
+        const data = `<div class="swiper-slide"><img src="/images/etc/${result[i].imgUrl}" alt="${result[i].desc}" /></div>`;
         logoHtml += data;
       }
-      console.log(logoHtml);
-      // 3. 생성된 html 을 원하는 곳에 배치
-      // 4. swiper생성 및 실행
-    })
-    .catch(function (error) {
-      //   console.log(error);
-    });
 
-  const headerLogo = new Swiper(".header-logo-motion", {
-    loop: true,
-    autoplay: {
-      delay: 1500,
-      disableOnInteraction: false,
-    },
-    effect: "fade",
-    fadeEffect: {
-      crossFade: true,
-    },
-  });
+      // console.log(logoHtml);
+      // 3. 생성된 html 을 원하는 곳에 배치
+      const headerLogoTag = document.querySelector(
+        ".header-logo-motion .swiper-wrapper"
+      );
+      headerLogoTag.innerHTML = logoHtml;
+      // console.log(headerLogoTag);
+      // 4. swiper생성 및 실행.
+
+      const logoSlide = document.querySelector(".header-logo-motion");
+      // console.log(visaulSide);
+
+      const headerLogo = new Swiper(".header-logo-motion", {
+        loop: true,
+        autoplay: {
+          delay: 200,
+          disableOnInteraction: false,
+        },
+        effect: "fade",
+        fadeEffect: {
+          crossFade: true,
+        },
+      });
+
+      headerLogo.autoplay.stop();
+
+      logoSlide.addEventListener("mouseenter", function () {
+        console.log("오버");
+        headerLogo.autoplay.start();
+      });
+
+      logoSlide.addEventListener("mouseleave", function () {
+        console.log("아웃");
+        headerLogo.autoplay.stop();
+        headerLogo.slideTo(0);
+      });
+    });
 });
