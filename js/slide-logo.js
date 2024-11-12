@@ -55,14 +55,14 @@ window.addEventListener("load", function () {
       headerLogo.autoplay.stop();
 
       logoSlide.addEventListener("mouseenter", function () {
-        console.log("오버");
+        // console.log("오버");
         headerLogo.autoplay.start();
       });
 
       logoSlide.addEventListener("mouseleave", function () {
-        console.log("아웃");
+        // console.log("아웃");
         headerLogo.autoplay.stop();
-        headerLogo.slideTo(0);
+        headerLogo.slideToLoop(0);
       });
     });
 });
