@@ -1,49 +1,42 @@
-window.addEventListener("load", function () {
-  // MockData
-  // { imgUrl : "경로", desc: "설명문" }
-  // [{} {} {}]
-  //   const LogoData;
-  //   api 주소 : json 주소가 어디니?
-  const LOGO_DATA_URL = "/apis/logodata.json";
-  // API 를 통한 데이터 불러오기
-  // ---- request : 리퀘스트
-  //   ftch : 불러오기
-  // then : 성공했을때 , catch : 실패했을때
-  //   API 를 통해 불러들여진 결과물
-  // ----response : 리스판스
-  fetch(LOGO_DATA_URL)
-    .then(function (response) {
-      //   console.log(response);
-      const result = response.json();
-      //   console.log(result);
-      return result;
-    })
-    .then(function (result) {
+$(document).ready(function () {
+  var LOGO_DATA_URL = "/apis/logodata.json";
+
+  $.ajax({
+    url: LOGO_DATA_URL,
+    method: "GET",
+    datatype: "json",
+    success: function (result) {
       // 1. json 뜯기
       // console.log(result);
       // 2. 반복해서 html 태그 를 생성
       let logoHtml = "";
-      for (let i = 0; i < 9; i++) {
-        const data = `<div class="swiper-slide"><img src="/images/etc/${result[i].imgUrl}" alt="${result[i].desc}" /></div>`;
+
+      for (var i = 0; i < result.length; i++) {
+        var data = "";
+        data += "<div class='swiper-slide'>";
+        data += "<img src='";
+        data += "/images/etc/";
+        data += result[i].imgUrl;
+        data += "' alt='";
+        data += result[i].desc;
+        data += "'/>";
+        data += "</div>";
+
         logoHtml += data;
       }
 
       // console.log(logoHtml);
+
       // 3. 생성된 html 을 원하는 곳에 배치
-      const headerLogoTag = document.querySelector(
-        ".header-logo-motion .swiper-wrapper"
-      );
-      headerLogoTag.innerHTML = logoHtml;
+      var headerLogoTag = $(".header-logo-motion .swiper-wrapper");
       // console.log(headerLogoTag);
-      // 4. swiper생성 및 실행.
+      headerLogoTag.html(logoHtml);
 
-      const logoSlide = document.querySelector(".header-logo-motion");
-      // console.log(visaulSide);
-
+      // 4. swiper 생성 및 실행
       const headerLogo = new Swiper(".header-logo-motion", {
         loop: true,
         autoplay: {
-          delay: 200,
+          delay: 1500,
           disableOnInteraction: false,
         },
         effect: "fade",
@@ -52,17 +45,75 @@ window.addEventListener("load", function () {
         },
       });
 
+      // 추가 1:  먼저 멈춘다.
       headerLogo.autoplay.stop();
-
-      logoSlide.addEventListener("mouseenter", function () {
-        // console.log("오버");
+      // 추가 2: 마우스 오버 되면 다시 플레이
+      headerLogoTag.addEventListener("mouseenter", function () {
         headerLogo.autoplay.start();
       });
-
-      logoSlide.addEventListener("mouseleave", function () {
-        // console.log("아웃");
+      // 추가 3: 마우스 아웃 되면 멈춤 및 첫 슬라이드로 이동
+      headerLogoTag.addEventListener("mouseleave", function () {
         headerLogo.autoplay.stop();
-        headerLogo.slideToLoop(0);
+        headerLogo.slideToLoop(0); // 무조건 첫 슬라이드로 가라.
       });
+    },
+    error: function (error) {},
+  });
+
+  fetch(LOGO_DATA_URL)
+    .then(function (response) {
+      const result = response.json();
+      return result;
+    })
+    .then(function (result) {
+      // 1. json 뜯기
+      // console.log(result);
+      // 2. 반복해서 html 태그 를 생성
+      let logoHtml = "";
+
+      for (let i = 0; i < result.length; i++) {
+        const data = `<div class="swiper-slide"><img src="/images/etc/${result[i].imgUrl}" alt="${result[i].desc}"/></div>`;
+
+        logoHtml += data;
+      }
+
+      // console.log(logoHtml);
+
+      // 3. 생성된 html 을 원하는 곳에 배치
+      const headerLogoTag = document.querySelector(
+        ".header-logo-motion .swiper-wrapper"
+      );
+      // console.log(headerLogoTag);
+      headerLogoTag.innerHTML = logoHtml;
+
+      // 4. swiper 생성 및 실행
+      const headerLogo = new Swiper(".header-logo-motion", {
+        loop: true,
+        autoplay: {
+          delay: 1500,
+          disableOnInteraction: false,
+        },
+        effect: "fade",
+        fadeEffect: {
+          crossFade: true,
+        },
+      });
+
+      // 추가 1:  먼저 멈춘다.
+      headerLogo.autoplay.stop();
+      // 추가 2: 마우스 오버 되면 다시 플레이
+      headerLogoTag.addEventListener("mouseenter", function () {
+        headerLogo.autoplay.start();
+      });
+      // 추가 3: 마우스 아웃 되면 멈춤 및 첫 슬라이드로 이동
+      headerLogoTag.addEventListener("mouseleave", function () {
+        headerLogo.autoplay.stop();
+        headerLogo.slideToLoop(0); // 무조건 첫 슬라이드로 가라.
+      });
+    })
+    .catch(function (error) {
+      console.log(error);
     });
+
+  //   const logoData;
 });
