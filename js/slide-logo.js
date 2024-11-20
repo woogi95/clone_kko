@@ -48,11 +48,11 @@ $(document).ready(function () {
       // 추가 1:  먼저 멈춘다.
       headerLogo.autoplay.stop();
       // 추가 2: 마우스 오버 되면 다시 플레이
-      headerLogoTag.addEventListener("mouseenter", function () {
+      headerLogoTag.on("mouseenter", function () {
         headerLogo.autoplay.start();
       });
       // 추가 3: 마우스 아웃 되면 멈춤 및 첫 슬라이드로 이동
-      headerLogoTag.addEventListener("mouseleave", function () {
+      headerLogoTag.on("mouseleave", function () {
         headerLogo.autoplay.stop();
         headerLogo.slideToLoop(0); // 무조건 첫 슬라이드로 가라.
       });
