@@ -1,9 +1,0 @@
-window.addEventListener("load", function () {
-  // api 주소 : /apis/news.json 을 request(호출)
-  const NEWS_DATA_URL = "/apis/news.json";
-  // 연산처리 : html 만들기
-  fetch(NEWS_DATA_URL)
-  .then(function(){})
-  .then(function(){})
-  .catch(function(error){});
-});
