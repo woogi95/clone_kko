@@ -35,8 +35,8 @@ window.addEventListener("load", function () {
   // console.log(scrString);
 
   // 4. 버튼 클릭 처리
-  var openIcon = "./images/icon/icon-hbr.png";
-  var closeIcon = "./images/icon/icon-close.png";
+  var openIcon = "/images/icon/icon-hbr.png";
+  var closeIcon = "/images/icon/icon-close.png";
 
   // 모바일 메뉴 관련 내용을 찾아서 이름을 주고 보관하자.
   // 1.모바일 배경

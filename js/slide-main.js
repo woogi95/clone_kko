@@ -17,7 +17,7 @@ window.addEventListener("load", function () {
         
      <div class="swiper-slide" data-pc="${result[i].pc}" data-mb="${result[i].pc}">
                   <a href="${obj.url}">
-                    <img src="./images/${obj.pic}" alt="배너이미지" />
+                    <img src="/images/${obj.pic}" alt="배너이미지" />
                   </a>
                   <div class="slide-title">
                   ${obj.title}
@@ -30,7 +30,7 @@ window.addEventListener("load", function () {
       visualTag.innerHTML = htmlVisual;
 
       const slideList = document.querySelectorAll(
-        ".visual-slide .swiper-wrapper .swiper-slide"
+        ".visual-slide .swiper-wrapper .swiper-slide",
       );
 
       // console.log("innerHtml 이후", slideList);

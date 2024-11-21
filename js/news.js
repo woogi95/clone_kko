@@ -16,10 +16,10 @@ window.addEventListener("load", function () {
         const tag = `
         <a href="result${obj.link}" class="thum">
             <div class="thum-img">
-                        <img src="./images/${obj.imgpath}" alt="${obj.category}" />
+                        <img src="/images/${obj.imgpath}" alt="${obj.category}" />
             </div>
             <div class="thum-cate" >
-                <img src="./images/icon/${obj.icon}" alt="${obj.category}" />
+                <img src="/images/icon/${obj.icon}" alt="${obj.category}" />
                 <span style="color:${obj.txtcolor}">${obj.category}</span>
             </div>
             <h5 class="thum-title" >

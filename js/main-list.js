@@ -16,10 +16,10 @@ window.addEventListener("load", function () {
         htmlAtaglist += `
         <a href="${obj.link}" class="thum">
                     <div class="thum-img">
-                      <img src="./images/${obj.imgpath}" alt="뉴스" />
+                      <img src="/images/${obj.imgpath}" alt="뉴스" />
                     </div>
                     <div class="thum-cate">
-                      <img src="./images/icon/${obj.icon}" alt="llms" />
+                      <img src="/images/icon/${obj.icon}" alt="llms" />
                       <span style="color:${obj.txtcolor}">${obj.category}</span>
                     </div>
                     <h5 class="thum-title">

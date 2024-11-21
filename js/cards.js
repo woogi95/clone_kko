@@ -14,7 +14,7 @@ window.addEventListener("load", function () {
         const obj = result[i];
         const cardData = `<a href="#" class="card-wrap">
                 <div class="card-img">
-                  <img src="./images/${obj.imgpath}" alt="${obj.cardno}" />
+                  <img src="/images/${obj.imgpath}" alt="${obj.cardno}" />
                 </div>
                 <div class="card-info">
                   <h5 class="card-cate">${obj.cardname}</h5>

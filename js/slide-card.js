@@ -16,7 +16,7 @@ window.addEventListener("load", function () {
         <div class="swiper-slide"> 
         <a href="#" class="card-wrap">
                 <div class="card-img">
-                  <img src="./images/${obj.imgpath}" alt="${obj.cardno}" />
+                  <img src="/images/${obj.imgpath}" alt="${obj.cardno}" />
                 </div>
                 <div class="card-info">
                   <h5 class="card-cate">${obj.cardname}</h5>
